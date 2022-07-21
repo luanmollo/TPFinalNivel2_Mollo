@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Articulos.Winforms
 {
-    public partial class Form1 : Form
+    public partial class frmListaArticulos : Form
     {
-        public Form1()
+        public frmListaArticulos()
         {
             InitializeComponent();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAltaArticulo alta = new frmAltaArticulo();
+            alta.ShowDialog();
+
         }
     }
 }
