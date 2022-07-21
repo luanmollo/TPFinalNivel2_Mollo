@@ -13,11 +13,14 @@ namespace Articulos.Datos
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataReader lector;
-        public SqlDataReader Lector { get; }
+        public SqlDataReader Lector
+        {
+            get { return lector; }
+        }
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection(ConfigurationManager.AppSettings["dbInfo"]);
+            conexion = new SqlConnection("server=CYS160PC\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true");
             comando = new SqlCommand();
         }
 

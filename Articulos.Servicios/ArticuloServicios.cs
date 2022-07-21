@@ -26,7 +26,7 @@ namespace Articulos.Servicios
                     Articulo aux = new Articulo();
 
                     aux.Id = (int)datos.Lector["Id"];
-                    aux.Codigo = (int)datos.Lector["Codigo"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     if (!(datos.Lector["ImagenUrl"] is DBNull))

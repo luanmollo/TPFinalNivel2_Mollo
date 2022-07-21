@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Articulos.Modelo;
+using Articulos.Servicios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,33 @@ namespace Articulos.Winforms
 {
     public partial class frmListaArticulos : Form
     {
+        private List<Articulo> listaArticulos;
+
         public frmListaArticulos()
         {
             InitializeComponent();
+        }
+
+        private void frmListaArticulos_Load(object sender, EventArgs e)
+        {
+            Cargar();
+        }
+
+        private void Cargar()
+        {
+            ArticuloServicios servicio = new ArticuloServicios();
+
+            try
+            {
+                listaArticulos = servicio.Listar();
+                dgvArticulos.DataSource = listaArticulos;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+                //MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

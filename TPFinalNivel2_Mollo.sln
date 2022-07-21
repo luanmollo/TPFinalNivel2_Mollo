@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Articulos.Winforms", "Artic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Articulos.Modelo", "Articulos.Modelo\Articulos.Modelo.csproj", "{4BF7A1E1-608D-44A3-8B27-9DBDAAC82032}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Articulos.Datos", "Articulos.Datos\Articulos.Datos.csproj", "{D4897E16-C0EA-419B-B78F-360B185092CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Articulos.Servicios", "Articulos.Servicios\Articulos.Servicios.csproj", "{AF8D4DB1-48B3-415A-B35A-1E2E898C19CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{4BF7A1E1-608D-44A3-8B27-9DBDAAC82032}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BF7A1E1-608D-44A3-8B27-9DBDAAC82032}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BF7A1E1-608D-44A3-8B27-9DBDAAC82032}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4897E16-C0EA-419B-B78F-360B185092CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4897E16-C0EA-419B-B78F-360B185092CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4897E16-C0EA-419B-B78F-360B185092CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4897E16-C0EA-419B-B78F-360B185092CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF8D4DB1-48B3-415A-B35A-1E2E898C19CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF8D4DB1-48B3-415A-B35A-1E2E898C19CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF8D4DB1-48B3-415A-B35A-1E2E898C19CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF8D4DB1-48B3-415A-B35A-1E2E898C19CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

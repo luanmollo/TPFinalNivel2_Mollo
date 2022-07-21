@@ -179,6 +179,7 @@
             this.Name = "frmListaArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mis articulos";
+            this.Load += new System.EventHandler(this.frmListaArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).EndInit();
             this.gbBusquedaAvanzada.ResumeLayout(false);
