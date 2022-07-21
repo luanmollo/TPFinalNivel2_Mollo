@@ -35,6 +35,7 @@ namespace Articulos.Winforms
                 listaArticulos = servicio.Listar();
                 dgvArticulos.DataSource = listaArticulos;
                 OcultarColumnas();
+                CargarImagen(listaArticulos[0].UrlImagen);
             }
             catch (Exception ex)
             {
@@ -50,6 +51,28 @@ namespace Articulos.Winforms
             dgvArticulos.Columns["UrlImagen"].Visible = false;
         }
 
+        private void CargarImagen(string imagen)
+        {
+            try
+            {
+                pbArticulo.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                pbArticulo.Load("https://www.sinrumbofijo.com/wp-content/uploads/2016/05/default-placeholder.png");                
+            }
+        }
+
+
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            if(dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                CargarImagen(seleccionado.UrlImagen);
+            }
+        }
+        
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAltaArticulo alta = new frmAltaArticulo();

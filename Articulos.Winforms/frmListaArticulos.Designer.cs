@@ -53,6 +53,7 @@
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.Size = new System.Drawing.Size(606, 221);
             this.dgvArticulos.TabIndex = 0;
+            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // btnAgregar
             // 
@@ -87,6 +88,7 @@
             this.pbArticulo.Location = new System.Drawing.Point(678, 41);
             this.pbArticulo.Name = "pbArticulo";
             this.pbArticulo.Size = new System.Drawing.Size(221, 221);
+            this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbArticulo.TabIndex = 5;
             this.pbArticulo.TabStop = false;
             // 
@@ -194,7 +196,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.PictureBox pbArticulo;
         private System.Windows.Forms.ComboBox cbCampo;
         private System.Windows.Forms.ComboBox cbCriterio;
         private System.Windows.Forms.TextBox txtFiltro;
@@ -203,6 +204,7 @@
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.Label lblCriterio;
         private System.Windows.Forms.Label lblCampo;
+        internal System.Windows.Forms.PictureBox pbArticulo;
     }
 }
 
