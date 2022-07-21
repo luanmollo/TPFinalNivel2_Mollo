@@ -34,6 +34,7 @@ namespace Articulos.Winforms
             {
                 listaArticulos = servicio.Listar();
                 dgvArticulos.DataSource = listaArticulos;
+                OcultarColumnas();
             }
             catch (Exception ex)
             {
@@ -41,6 +42,12 @@ namespace Articulos.Winforms
                 throw ex;
                 //MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void OcultarColumnas()
+        {
+            dgvArticulos.Columns["Id"].Visible = false;
+            dgvArticulos.Columns["UrlImagen"].Visible = false;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

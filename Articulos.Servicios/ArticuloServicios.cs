@@ -18,7 +18,7 @@ namespace Articulos.Servicios
 
             try
             {
-                datos.ConfigurarConsulta("select a.Id, Codigo, Nombre, a.Descripcion, ImagenUrl, m.Descripcion Marca, c.Descripcion Categoria, a.IdMarca, a.IdCategoria from articulos a, marcas m, categorias c where a.IdMarca = m.Id and a.IdCategoria = c.Id");
+                datos.ConfigurarConsulta("select a.Id, Codigo, Nombre, a.Descripcion, ImagenUrl, m.Descripcion Marca, c.Descripcion Categoria, a.IdMarca, a.IdCategoria, Precio from articulos a, marcas m, categorias c where a.IdMarca = m.Id and a.IdCategoria = c.Id");
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())
@@ -39,6 +39,7 @@ namespace Articulos.Servicios
                     aux.Categoria = new Categoria();
                     aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
                     aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    aux.Precio = Math.Truncate((decimal)datos.Lector["Precio"] * 100) / 100;
 
                     lista.Add(aux);                    
                 }

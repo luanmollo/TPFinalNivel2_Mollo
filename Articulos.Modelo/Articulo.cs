@@ -15,6 +15,6 @@ namespace Articulos.Modelo
         public Marca Marca { get; set; }
         public Categoria Categoria { get; set; }
         public string UrlImagen { get; set; }
-        public int Precio { get; set; }
+        public decimal Precio { get; set; }
     }
 }
