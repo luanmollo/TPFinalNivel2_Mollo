@@ -31,7 +31,6 @@
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.btnOcultar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.pbArticulo = new System.Windows.Forms.PictureBox();
             this.cbCampo = new System.Windows.Forms.ComboBox();
@@ -39,9 +38,9 @@
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBusquedaAvanzada = new System.Windows.Forms.Button();
             this.gbBusquedaAvanzada = new System.Windows.Forms.GroupBox();
-            this.lblCampo = new System.Windows.Forms.Label();
-            this.lblCriterio = new System.Windows.Forms.Label();
             this.lblFiltro = new System.Windows.Forms.Label();
+            this.lblCriterio = new System.Windows.Forms.Label();
+            this.lblCampo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
             this.gbBusquedaAvanzada.SuspendLayout();
@@ -74,18 +73,9 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // btnOcultar
-            // 
-            this.btnOcultar.Location = new System.Drawing.Point(346, 299);
-            this.btnOcultar.Name = "btnOcultar";
-            this.btnOcultar.Size = new System.Drawing.Size(111, 23);
-            this.btnOcultar.TabIndex = 3;
-            this.btnOcultar.Text = "Ocultar";
-            this.btnOcultar.UseVisualStyleBackColor = true;
-            // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(499, 299);
+            this.btnEliminar.Location = new System.Drawing.Point(346, 299);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(111, 23);
             this.btnEliminar.TabIndex = 4;
@@ -148,14 +138,14 @@
             this.gbBusquedaAvanzada.TabStop = false;
             this.gbBusquedaAvanzada.Text = "Búsqueda avanzada";
             // 
-            // lblCampo
+            // lblFiltro
             // 
-            this.lblCampo.AutoSize = true;
-            this.lblCampo.Location = new System.Drawing.Point(19, 20);
-            this.lblCampo.Name = "lblCampo";
-            this.lblCampo.Size = new System.Drawing.Size(43, 13);
-            this.lblCampo.TabIndex = 10;
-            this.lblCampo.Text = "Campo:";
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(322, 20);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(32, 13);
+            this.lblFiltro.TabIndex = 12;
+            this.lblFiltro.Text = "Filtro:";
             // 
             // lblCriterio
             // 
@@ -166,14 +156,14 @@
             this.lblCriterio.TabIndex = 11;
             this.lblCriterio.Text = "Criterio:";
             // 
-            // lblFiltro
+            // lblCampo
             // 
-            this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(322, 20);
-            this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(32, 13);
-            this.lblFiltro.TabIndex = 12;
-            this.lblFiltro.Text = "Filtro:";
+            this.lblCampo.AutoSize = true;
+            this.lblCampo.Location = new System.Drawing.Point(19, 20);
+            this.lblCampo.Name = "lblCampo";
+            this.lblCampo.Size = new System.Drawing.Size(43, 13);
+            this.lblCampo.TabIndex = 10;
+            this.lblCampo.Text = "Campo:";
             // 
             // frmListaArticulos
             // 
@@ -183,7 +173,6 @@
             this.Controls.Add(this.gbBusquedaAvanzada);
             this.Controls.Add(this.pbArticulo);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnOcultar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulos);
@@ -203,7 +192,6 @@
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnOcultar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.PictureBox pbArticulo;
         private System.Windows.Forms.ComboBox cbCampo;
