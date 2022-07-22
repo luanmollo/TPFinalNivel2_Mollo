@@ -127,7 +127,7 @@ namespace Articulos.Winforms
                     return true;
                 }
 
-                if (!(ValidarSoloNumeros(txtFiltro.Text)))
+                if (!(Validaciones.ValidarSoloNumeros(txtFiltro.Text)))
                 {
                     MessageBox.Show("Debes ingresar sólo números");
                     return true;
@@ -139,16 +139,6 @@ namespace Articulos.Winforms
             return false;
         }
 
-        public bool ValidarSoloNumeros(string cadena)
-        {
-            foreach (char c in cadena)
-            {
-                if (!(char.IsNumber(c)))
-                    return false;
-            }
-
-            return true;
-        }
 
         private void btnBusquedaAvanzada_Click(object sender, EventArgs e)
         {

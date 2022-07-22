@@ -41,12 +41,32 @@ namespace Articulos.Winforms
             }
         }
 
+        private bool ValidarAltaArticulo()
+        {
+            if (string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtDescripcion.Text) || string.IsNullOrEmpty(txtImagen.Text) || string.IsNullOrEmpty(txtPrecio.Text)){
+                MessageBox.Show("Debes completar todos los campos");
+                return true;
+            }
+
+            if (!(Validaciones.ValidarSoloNumeros(txtPrecio.Text)))
+            {
+                MessageBox.Show("Debes ingresar sólo números en el campo 'Precio'");
+                return true;
+            }
+            
+
+            return false;
+        }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             ArticuloServicios articuloServicio = new ArticuloServicios();
 
             try
             {
+                if (ValidarAltaArticulo())
+                    return;
+
                 Articulo articulo = new Articulo();
 
                 articulo.Codigo = txtCodigo.Text;

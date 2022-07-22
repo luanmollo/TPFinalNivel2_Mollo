@@ -168,10 +168,10 @@
             // 
             // pbArticulo
             // 
-            this.pbArticulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbArticulo.Location = new System.Drawing.Point(333, 27);
             this.pbArticulo.Name = "pbArticulo";
             this.pbArticulo.Size = new System.Drawing.Size(221, 221);
+            this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbArticulo.TabIndex = 21;
             this.pbArticulo.TabStop = false;
             // 
