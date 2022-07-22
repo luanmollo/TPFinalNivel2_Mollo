@@ -24,6 +24,13 @@ namespace Articulos.Winforms
         private void frmListaArticulos_Load(object sender, EventArgs e)
         {
             Cargar();
+            cbCampo.Items.Add("Código");
+            cbCampo.Items.Add("Nombre");
+            cbCampo.Items.Add("Descripción");
+            cbCampo.Items.Add("Marca");
+            cbCampo.Items.Add("Categoría");
+            cbCampo.Items.Add("Precio");
+
         }
 
         private void Cargar()
@@ -39,9 +46,7 @@ namespace Articulos.Winforms
             }
             catch (Exception ex)
             {
-
-                throw ex;
-                //MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -78,6 +83,45 @@ namespace Articulos.Winforms
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
 
+        }
+
+        private void cbCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cbCampo.SelectedItem.ToString();
+
+            if(opcion == "Precio")
+            {
+                cbCriterio.Items.Clear();
+                cbCriterio.Items.Add("Mayor a");
+                cbCriterio.Items.Add("Menor a");
+                cbCriterio.Items.Add("Igual a");
+            }
+            else
+            {
+                cbCriterio.Items.Clear();
+                cbCriterio.Items.Add("Empieza con");
+                cbCriterio.Items.Add("Termina con");
+                cbCriterio.Items.Add("Contiene");
+            }
+        }
+
+        private void btnBusquedaAvanzada_Click(object sender, EventArgs e)
+        {
+            ArticuloServicios servicio = new ArticuloServicios();
+
+            try
+            {
+                string campo = cbCampo.SelectedItem.ToString();
+                string criterio = cbCriterio.SelectedItem.ToString();
+                string filtro = txtFiltro.Text;
+
+                dgvArticulos.DataSource = servicio.Filtrar(campo, criterio, filtro);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

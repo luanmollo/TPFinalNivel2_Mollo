@@ -51,6 +51,8 @@
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.Location = new System.Drawing.Point(21, 41);
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.ReadOnly = true;
+            this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulos.Size = new System.Drawing.Size(606, 221);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
@@ -79,7 +81,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(346, 299);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(111, 23);
-            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
@@ -94,35 +96,39 @@
             // 
             // cbCampo
             // 
+            this.cbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCampo.FormattingEnabled = true;
             this.cbCampo.Location = new System.Drawing.Point(19, 38);
             this.cbCampo.Name = "cbCampo";
             this.cbCampo.Size = new System.Drawing.Size(111, 21);
-            this.cbCampo.TabIndex = 6;
+            this.cbCampo.TabIndex = 0;
+            this.cbCampo.SelectedIndexChanged += new System.EventHandler(this.cbCampo_SelectedIndexChanged);
             // 
             // cbCriterio
             // 
+            this.cbCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCriterio.FormattingEnabled = true;
             this.cbCriterio.Location = new System.Drawing.Point(172, 38);
             this.cbCriterio.Name = "cbCriterio";
             this.cbCriterio.Size = new System.Drawing.Size(111, 21);
-            this.cbCriterio.TabIndex = 7;
+            this.cbCriterio.TabIndex = 1;
             // 
             // txtFiltro
             // 
             this.txtFiltro.Location = new System.Drawing.Point(325, 38);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(111, 20);
-            this.txtFiltro.TabIndex = 8;
+            this.txtFiltro.TabIndex = 2;
             // 
             // btnBusquedaAvanzada
             // 
             this.btnBusquedaAvanzada.Location = new System.Drawing.Point(478, 37);
             this.btnBusquedaAvanzada.Name = "btnBusquedaAvanzada";
             this.btnBusquedaAvanzada.Size = new System.Drawing.Size(111, 23);
-            this.btnBusquedaAvanzada.TabIndex = 9;
+            this.btnBusquedaAvanzada.TabIndex = 3;
             this.btnBusquedaAvanzada.Text = "Buscar";
             this.btnBusquedaAvanzada.UseVisualStyleBackColor = true;
+            this.btnBusquedaAvanzada.Click += new System.EventHandler(this.btnBusquedaAvanzada_Click);
             // 
             // gbBusquedaAvanzada
             // 
