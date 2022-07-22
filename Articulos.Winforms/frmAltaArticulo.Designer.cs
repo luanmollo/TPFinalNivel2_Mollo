@@ -139,6 +139,7 @@
             this.txtImagen.Name = "txtImagen";
             this.txtImagen.Size = new System.Drawing.Size(131, 20);
             this.txtImagen.TabIndex = 5;
+            this.txtImagen.Leave += new System.EventHandler(this.txtImagen_Leave);
             // 
             // txtPrecio
             // 
@@ -167,6 +168,7 @@
             // 
             // pbArticulo
             // 
+            this.pbArticulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbArticulo.Location = new System.Drawing.Point(333, 27);
             this.pbArticulo.Name = "pbArticulo";
             this.pbArticulo.Size = new System.Drawing.Size(221, 221);
@@ -191,6 +193,7 @@
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSubirImagen
             // 

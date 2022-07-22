@@ -68,5 +68,28 @@ namespace Articulos.Winforms
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void CargarImagen(string imagen)
+        {
+            try
+            {
+                pbArticulo.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+
+                pbArticulo.Load("https://www.sinrumbofijo.com/wp-content/uploads/2016/05/default-placeholder.png");
+            }
+        }
+
+        private void txtImagen_Leave(object sender, EventArgs e)
+        {
+            CargarImagen(txtImagen.Text);
+        }
     }
 }
