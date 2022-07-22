@@ -97,6 +97,7 @@
             // cbCampo
             // 
             this.cbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCampo.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cbCampo.FormattingEnabled = true;
             this.cbCampo.Location = new System.Drawing.Point(19, 38);
             this.cbCampo.Name = "cbCampo";

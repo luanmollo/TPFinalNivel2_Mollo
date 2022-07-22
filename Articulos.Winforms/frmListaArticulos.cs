@@ -105,12 +105,61 @@ namespace Articulos.Winforms
             }
         }
 
+        private bool ValidarBusquedaAvanzada()
+        {
+            if(cbCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debes seleccionar un campo");
+                return true;
+            }
+
+            if(cbCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debes seleccionar un criterio");
+                return true;
+            }
+
+            if(cbCampo.SelectedItem.ToString() == "Precio")
+            {
+                if (string.IsNullOrEmpty(txtFiltro.Text))
+                {
+                    MessageBox.Show("Debes ingresar un filtro");
+                    return true;
+                }
+
+                if (!(ValidarSoloNumeros(txtFiltro.Text)))
+                {
+                    MessageBox.Show("Debes ingresar sólo números");
+                    return true;
+                }
+            }
+
+
+
+            return false;
+        }
+
+        public bool ValidarSoloNumeros(string cadena)
+        {
+            foreach (char c in cadena)
+            {
+                if (!(char.IsNumber(c)))
+                    return false;
+            }
+
+            return true;
+        }
+
         private void btnBusquedaAvanzada_Click(object sender, EventArgs e)
         {
             ArticuloServicios servicio = new ArticuloServicios();
 
             try
             {
+
+                if (ValidarBusquedaAvanzada())
+                    return;
+                
                 string campo = cbCampo.SelectedItem.ToString();
                 string criterio = cbCriterio.SelectedItem.ToString();
                 string filtro = txtFiltro.Text;
