@@ -199,6 +199,35 @@ namespace Articulos.Servicios
                 datos.CerrarConexion();
             }
         }
+
+        public void Agregar(Articulo nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.ConfigurarConsulta("insert into articulos(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) values (@Codigo, @Nombre, @Descripcion, @IdMarca, @IdCategoria, @ImagenUrl, @Precio)");
+                datos.ConfigurarParametros("@Codigo", nuevo.Codigo);
+                datos.ConfigurarParametros("@Nombre", nuevo.Nombre);
+                datos.ConfigurarParametros("@Descripcion", nuevo.Descripcion);
+                datos.ConfigurarParametros("@IdMarca", nuevo.Marca.Id);
+                datos.ConfigurarParametros("@IdCategoria", nuevo.Categoria.Id);
+                datos.ConfigurarParametros("@ImagenUrl", nuevo.UrlImagen);
+                datos.ConfigurarParametros("@Precio", nuevo.Precio);
+
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }   
 
 }

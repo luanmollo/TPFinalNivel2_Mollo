@@ -117,51 +117,53 @@
             this.txtCodigo.Location = new System.Drawing.Point(55, 38);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(211, 20);
-            this.txtCodigo.TabIndex = 14;
+            this.txtCodigo.TabIndex = 0;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(55, 92);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(211, 20);
-            this.txtNombre.TabIndex = 15;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(55, 146);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(211, 20);
-            this.txtDescripcion.TabIndex = 16;
+            this.txtDescripcion.TabIndex = 2;
             // 
             // txtImagen
             // 
             this.txtImagen.Location = new System.Drawing.Point(55, 303);
             this.txtImagen.Name = "txtImagen";
             this.txtImagen.Size = new System.Drawing.Size(131, 20);
-            this.txtImagen.TabIndex = 17;
+            this.txtImagen.TabIndex = 5;
             // 
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(55, 357);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(211, 20);
-            this.txtPrecio.TabIndex = 18;
+            this.txtPrecio.TabIndex = 7;
             // 
             // cbMarca
             // 
+            this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMarca.FormattingEnabled = true;
             this.cbMarca.Location = new System.Drawing.Point(55, 196);
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(211, 21);
-            this.cbMarca.TabIndex = 19;
+            this.cbMarca.TabIndex = 3;
             // 
             // cbCategoria
             // 
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Location = new System.Drawing.Point(55, 253);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(211, 21);
-            this.cbCategoria.TabIndex = 20;
+            this.cbCategoria.TabIndex = 4;
             // 
             // pbArticulo
             // 
@@ -176,16 +178,17 @@
             this.btnAceptar.Location = new System.Drawing.Point(148, 414);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(145, 23);
-            this.btnAceptar.TabIndex = 22;
+            this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(318, 414);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(145, 23);
-            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -194,7 +197,7 @@
             this.btnSubirImagen.Location = new System.Drawing.Point(192, 301);
             this.btnSubirImagen.Name = "btnSubirImagen";
             this.btnSubirImagen.Size = new System.Drawing.Size(74, 23);
-            this.btnSubirImagen.TabIndex = 24;
+            this.btnSubirImagen.TabIndex = 6;
             this.btnSubirImagen.Text = "Subir";
             this.btnSubirImagen.UseVisualStyleBackColor = true;
             // 
@@ -224,6 +227,7 @@
             this.Name = "frmAltaArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AltaArticulo";
+            this.Load += new System.EventHandler(this.frmAltaArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
