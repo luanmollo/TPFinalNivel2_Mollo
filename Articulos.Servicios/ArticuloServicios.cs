@@ -228,6 +228,34 @@ namespace Articulos.Servicios
                 datos.CerrarConexion();
             }
         }
+
+        public void Modificar(Articulo articulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.ConfigurarConsulta("update articulos set Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, IdMarca = @IdMarca, IdCategoria = @IdCategoria, ImagenUrl = @ImagenUrl, Precio = @Precio where Id = @Id");
+                datos.ConfigurarParametros("@Id", articulo.Id);
+                datos.ConfigurarParametros("@Codigo", articulo.Codigo);
+                datos.ConfigurarParametros("@Nombre", articulo.Nombre);
+                datos.ConfigurarParametros("@Descripcion", articulo.Descripcion);
+                datos.ConfigurarParametros("@IdMarca", articulo.Marca.Id);
+                datos.ConfigurarParametros("@IdCategoria", articulo.Categoria.Id);
+                datos.ConfigurarParametros("@Precio", articulo.Precio);
+
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }   
 
 }

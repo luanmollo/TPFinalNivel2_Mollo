@@ -134,8 +134,6 @@ namespace Articulos.Winforms
                 }
             }
 
-
-
             return false;
         }
 
@@ -161,6 +159,16 @@ namespace Articulos.Winforms
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
+            modificar.ShowDialog();
+            Cargar();
         }
     }
 }

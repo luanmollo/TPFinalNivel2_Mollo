@@ -14,9 +14,19 @@ namespace Articulos.Winforms
 {
     public partial class frmAltaArticulo : Form
     {
+        private Articulo articulo = null;
+
+
         public frmAltaArticulo()
         {
             InitializeComponent();
+        }
+
+        public frmAltaArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+            Text = "Modificar Articulo";
         }
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
@@ -33,6 +43,18 @@ namespace Articulos.Winforms
                 cbCategoria.DataSource = categoriaServicio.Listar();
                 cbCategoria.ValueMember = "Id";
                 cbCategoria.DisplayMember = "Descripcion";
+
+                if(articulo != null)
+                {
+                    txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
+                    txtDescripcion.Text = articulo.Descripcion;
+                    cbMarca.SelectedValue = articulo.Marca.Id;
+                    cbCategoria.SelectedValue = articulo.Categoria.Id;
+                    txtImagen.Text = articulo.UrlImagen;
+                    CargarImagen(articulo.UrlImagen);
+                    txtPrecio.Text = articulo.Precio.ToString();
+                }
             }
             catch (Exception ex)
             {
