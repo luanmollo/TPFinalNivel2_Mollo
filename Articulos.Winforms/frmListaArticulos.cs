@@ -163,6 +163,9 @@ namespace Articulos.Winforms
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            if (Validaciones.ValidarSeleccionFila(dgvArticulos))
+                return;
+
             Articulo seleccionado;
             seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
 

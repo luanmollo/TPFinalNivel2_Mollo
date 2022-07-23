@@ -242,6 +242,7 @@ namespace Articulos.Servicios
                 datos.ConfigurarParametros("@Descripcion", articulo.Descripcion);
                 datos.ConfigurarParametros("@IdMarca", articulo.Marca.Id);
                 datos.ConfigurarParametros("@IdCategoria", articulo.Categoria.Id);
+                datos.ConfigurarParametros("@ImagenUrl", articulo.UrlImagen);
                 datos.ConfigurarParametros("@Precio", articulo.Precio);
 
                 datos.EjecutarAccion();

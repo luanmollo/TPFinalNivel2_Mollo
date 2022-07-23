@@ -89,7 +89,8 @@ namespace Articulos.Winforms
                 if (ValidarAltaArticulo())
                     return;
 
-                Articulo articulo = new Articulo();
+                if(articulo == null)
+                    articulo = new Articulo();
 
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Descripcion = txtDescripcion.Text;
@@ -99,8 +100,16 @@ namespace Articulos.Winforms
                 articulo.UrlImagen = txtImagen.Text;
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
 
-
-                articuloServicio.Agregar(articulo);
+                if(articulo.Id != 0)
+                {
+                    articuloServicio.Modificar(articulo);
+                    MessageBox.Show("Modificado exitosamente");
+                }
+                else
+                {
+                    articuloServicio.Agregar(articulo);
+                    MessageBox.Show("Agregado exitosamente");
+                }
 
                 Close();
             }

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Articulos.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Articulos.Winforms
 {
@@ -18,5 +20,19 @@ namespace Articulos.Winforms
 
             return true;
         }
+
+        
+        public static bool ValidarSeleccionFila(DataGridView dgv)
+        {
+
+            if (dgv.CurrentRow == null)
+            {
+                MessageBox.Show("No hay un artículo seleccionado");
+                return true;
+            }
+
+            return false;
+        }
+        
     }
 }
