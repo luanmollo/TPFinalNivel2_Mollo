@@ -41,6 +41,7 @@ namespace Articulos.Winforms
             {
                 listaArticulos = servicio.Listar();
                 dgvArticulos.DataSource = listaArticulos;
+                dgvArticulos.RowHeadersVisible = false;
                 OcultarColumnas();
                 CargarImagen(listaArticulos[0].UrlImagen);
             }
@@ -238,5 +239,21 @@ namespace Articulos.Winforms
             frmBajaMarca baja = new frmBajaMarca(btn.Name);
             baja.ShowDialog();
         }
+
+
+        private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Validaciones.ValidarSeleccionFila(dgvArticulos))
+                return;
+
+            Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            if(e.RowIndex != -1)
+            {
+                frmDetalleArticulo detalle = new frmDetalleArticulo(articulo);
+                detalle.ShowDialog();
+            }
+        }
+
     }
 }
