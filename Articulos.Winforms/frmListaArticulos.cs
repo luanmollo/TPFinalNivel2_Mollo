@@ -173,5 +173,23 @@ namespace Articulos.Winforms
             modificar.ShowDialog();
             Cargar();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (Validaciones.ValidarSeleccionFila(dgvArticulos))
+                return;
+
+            Articulo seleccionado;
+            ArticuloServicios servicio = new ArticuloServicios();
+
+            DialogResult respuesta = MessageBox.Show("¿Estás seguro de eliminar?", "¿Eliminar?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if(respuesta == DialogResult.Yes)
+            {
+                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                servicio.Eliminar(seleccionado.Id);
+                Cargar();
+            }
+        }
     }
 }
