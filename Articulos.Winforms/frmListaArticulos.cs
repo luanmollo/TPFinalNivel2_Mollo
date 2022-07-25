@@ -222,5 +222,21 @@ namespace Articulos.Winforms
             frmAltaMarca alta = new frmAltaMarca(btn.Name);
             alta.ShowDialog();
         }
+
+        private void btnEliminarMarca_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            frmBajaMarca baja = new frmBajaMarca(btn.Name);
+            baja.ShowDialog();
+        }
+
+        private void btnEliminarCategoria_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            frmBajaMarca baja = new frmBajaMarca(btn.Name);
+            baja.ShowDialog();
+        }
     }
 }

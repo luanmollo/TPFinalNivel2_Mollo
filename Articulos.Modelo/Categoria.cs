@@ -14,6 +14,5 @@ namespace Articulos.Modelo
         {
             return Descripcion;
         }
-
     }
 }

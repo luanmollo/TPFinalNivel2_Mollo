@@ -44,8 +44,10 @@
             this.lblCampo = new System.Windows.Forms.Label();
             this.gbArticulo = new System.Windows.Forms.GroupBox();
             this.gbMarca = new System.Windows.Forms.GroupBox();
+            this.btnEliminarMarca = new System.Windows.Forms.Button();
             this.btnAgregarMarca = new System.Windows.Forms.Button();
             this.gbCategoria = new System.Windows.Forms.GroupBox();
+            this.btnEliminarCategoria = new System.Windows.Forms.Button();
             this.btnAgregarCategoria = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
@@ -211,6 +213,7 @@
             // 
             // gbMarca
             // 
+            this.gbMarca.Controls.Add(this.btnEliminarMarca);
             this.gbMarca.Controls.Add(this.btnAgregarMarca);
             this.gbMarca.Location = new System.Drawing.Point(21, 334);
             this.gbMarca.Name = "gbMarca";
@@ -218,6 +221,16 @@
             this.gbMarca.TabIndex = 12;
             this.gbMarca.TabStop = false;
             this.gbMarca.Text = "Marca";
+            // 
+            // btnEliminarMarca
+            // 
+            this.btnEliminarMarca.Location = new System.Drawing.Point(172, 19);
+            this.btnEliminarMarca.Name = "btnEliminarMarca";
+            this.btnEliminarMarca.Size = new System.Drawing.Size(111, 23);
+            this.btnEliminarMarca.TabIndex = 1;
+            this.btnEliminarMarca.Text = "Eliminar";
+            this.btnEliminarMarca.UseVisualStyleBackColor = true;
+            this.btnEliminarMarca.Click += new System.EventHandler(this.btnEliminarMarca_Click);
             // 
             // btnAgregarMarca
             // 
@@ -231,6 +244,7 @@
             // 
             // gbCategoria
             // 
+            this.gbCategoria.Controls.Add(this.btnEliminarCategoria);
             this.gbCategoria.Controls.Add(this.btnAgregarCategoria);
             this.gbCategoria.Location = new System.Drawing.Point(325, 334);
             this.gbCategoria.Name = "gbCategoria";
@@ -238,6 +252,16 @@
             this.gbCategoria.TabIndex = 13;
             this.gbCategoria.TabStop = false;
             this.gbCategoria.Text = "Categoría";
+            // 
+            // btnEliminarCategoria
+            // 
+            this.btnEliminarCategoria.Location = new System.Drawing.Point(174, 19);
+            this.btnEliminarCategoria.Name = "btnEliminarCategoria";
+            this.btnEliminarCategoria.Size = new System.Drawing.Size(111, 23);
+            this.btnEliminarCategoria.TabIndex = 2;
+            this.btnEliminarCategoria.Text = "Eliminar";
+            this.btnEliminarCategoria.UseVisualStyleBackColor = true;
+            this.btnEliminarCategoria.Click += new System.EventHandler(this.btnEliminarCategoria_Click);
             // 
             // btnAgregarCategoria
             // 
@@ -296,6 +320,8 @@
         private System.Windows.Forms.Button btnAgregarMarca;
         private System.Windows.Forms.GroupBox gbCategoria;
         private System.Windows.Forms.Button btnAgregarCategoria;
+        private System.Windows.Forms.Button btnEliminarMarca;
+        private System.Windows.Forms.Button btnEliminarCategoria;
     }
 }
 
