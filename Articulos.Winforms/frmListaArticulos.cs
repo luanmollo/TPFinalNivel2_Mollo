@@ -27,9 +27,11 @@ namespace Articulos.Winforms
             cbCampo.Items.Add("Código");
             cbCampo.Items.Add("Nombre");
             cbCampo.Items.Add("Descripción");
-            cbCampo.Items.Add("Marca");
-            cbCampo.Items.Add("Categoría");
             cbCampo.Items.Add("Precio");
+
+
+            cbGrupo.Items.Add("Marca");
+            cbGrupo.Items.Add("Categoría");
 
         }
 
@@ -202,7 +204,7 @@ namespace Articulos.Winforms
             }
         }
 
-        private void linklblLimpiarFiltro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linklblLimpiarBusquedaAvanzada_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             cbCampo.SelectedIndex = -1;
             cbCriterio.SelectedIndex = -1;
@@ -255,5 +257,80 @@ namespace Articulos.Winforms
             }
         }
 
+        private void cbGrupo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbGrupo.SelectedIndex == -1)
+            {
+                cbValor.DataSource = null;
+            }
+            else
+            {
+                string opcion = cbGrupo.SelectedItem.ToString();
+
+                if (opcion == "Marca")
+                {
+                    MarcaServicios marcaServicio = new MarcaServicios();
+                    cbValor.DataSource = null;
+                    cbValor.DataSource = marcaServicio.Listar();
+                }
+                else if(opcion == "Categoría")
+                {
+                    CategoriaServicios categoriaServicio = new CategoriaServicios();
+                    cbValor.DataSource = null;
+                    cbValor.DataSource = categoriaServicio.Listar();
+                }
+
+            }
+        }
+
+        private bool ValidarBusquedaGrupo()
+        {
+            if (cbGrupo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debes seleccionar un grupo");
+                return true;
+            }
+
+            if (cbValor.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debes seleccionar un valor");
+                return true;
+            }
+
+            return false;
+        }
+
+        private void btnBusquedaGrupo_Click(object sender, EventArgs e)
+        {
+            ArticuloServicios servicio = new ArticuloServicios();
+
+            try
+            {
+                if (ValidarBusquedaGrupo())
+                    return;
+
+                string campo = cbGrupo.SelectedItem.ToString();
+                string criterio = "Contiene";
+                string filtro = cbValor.SelectedItem.ToString();
+
+                dgvArticulos.DataSource = servicio.Filtrar(campo, criterio, filtro);
+
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void linkLimpiarBusquedaGrupo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            cbGrupo.SelectedIndex = -1;
+            cbValor.SelectedIndex = -1;
+            CargarGrilla();
+
+        }
     }
 }

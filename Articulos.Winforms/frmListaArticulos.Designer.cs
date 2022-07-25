@@ -38,7 +38,7 @@
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBusquedaAvanzada = new System.Windows.Forms.Button();
             this.gbBusquedaAvanzada = new System.Windows.Forms.GroupBox();
-            this.linklblLimpiarFiltro = new System.Windows.Forms.LinkLabel();
+            this.linklblLimpiarBusquedaAvanzada = new System.Windows.Forms.LinkLabel();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.lblCriterio = new System.Windows.Forms.Label();
             this.lblCampo = new System.Windows.Forms.Label();
@@ -49,18 +49,26 @@
             this.gbCategoria = new System.Windows.Forms.GroupBox();
             this.btnEliminarCategoria = new System.Windows.Forms.Button();
             this.btnAgregarCategoria = new System.Windows.Forms.Button();
+            this.gbBusquedaGrupo = new System.Windows.Forms.GroupBox();
+            this.btnBusquedaGrupo = new System.Windows.Forms.Button();
+            this.cbValor = new System.Windows.Forms.ComboBox();
+            this.cbGrupo = new System.Windows.Forms.ComboBox();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.lblGrupo = new System.Windows.Forms.Label();
+            this.linkLimpiarBusquedaGrupo = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
             this.gbBusquedaAvanzada.SuspendLayout();
             this.gbArticulo.SuspendLayout();
             this.gbMarca.SuspendLayout();
             this.gbCategoria.SuspendLayout();
+            this.gbBusquedaGrupo.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(21, 24);
+            this.dgvArticulos.Location = new System.Drawing.Point(21, 12);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -101,7 +109,7 @@
             // 
             // pbArticulo
             // 
-            this.pbArticulo.Location = new System.Drawing.Point(678, 24);
+            this.pbArticulo.Location = new System.Drawing.Point(678, 12);
             this.pbArticulo.Name = "pbArticulo";
             this.pbArticulo.Size = new System.Drawing.Size(221, 221);
             this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -147,7 +155,7 @@
             // 
             // gbBusquedaAvanzada
             // 
-            this.gbBusquedaAvanzada.Controls.Add(this.linklblLimpiarFiltro);
+            this.gbBusquedaAvanzada.Controls.Add(this.linklblLimpiarBusquedaAvanzada);
             this.gbBusquedaAvanzada.Controls.Add(this.lblFiltro);
             this.gbBusquedaAvanzada.Controls.Add(this.lblCriterio);
             this.gbBusquedaAvanzada.Controls.Add(this.lblCampo);
@@ -155,23 +163,23 @@
             this.gbBusquedaAvanzada.Controls.Add(this.btnBusquedaAvanzada);
             this.gbBusquedaAvanzada.Controls.Add(this.cbCampo);
             this.gbBusquedaAvanzada.Controls.Add(this.cbCriterio);
-            this.gbBusquedaAvanzada.Location = new System.Drawing.Point(21, 392);
+            this.gbBusquedaAvanzada.Location = new System.Drawing.Point(21, 368);
             this.gbBusquedaAvanzada.Name = "gbBusquedaAvanzada";
             this.gbBusquedaAvanzada.Size = new System.Drawing.Size(606, 74);
             this.gbBusquedaAvanzada.TabIndex = 10;
             this.gbBusquedaAvanzada.TabStop = false;
             this.gbBusquedaAvanzada.Text = "Búsqueda avanzada";
             // 
-            // linklblLimpiarFiltro
+            // linklblLimpiarBusquedaAvanzada
             // 
-            this.linklblLimpiarFiltro.AutoSize = true;
-            this.linklblLimpiarFiltro.Location = new System.Drawing.Point(517, 0);
-            this.linklblLimpiarFiltro.Name = "linklblLimpiarFiltro";
-            this.linklblLimpiarFiltro.Size = new System.Drawing.Size(62, 13);
-            this.linklblLimpiarFiltro.TabIndex = 13;
-            this.linklblLimpiarFiltro.TabStop = true;
-            this.linklblLimpiarFiltro.Text = "Limpiar filtro";
-            this.linklblLimpiarFiltro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLimpiarFiltro_LinkClicked);
+            this.linklblLimpiarBusquedaAvanzada.AutoSize = true;
+            this.linklblLimpiarBusquedaAvanzada.Location = new System.Drawing.Point(517, 0);
+            this.linklblLimpiarBusquedaAvanzada.Name = "linklblLimpiarBusquedaAvanzada";
+            this.linklblLimpiarBusquedaAvanzada.Size = new System.Drawing.Size(62, 13);
+            this.linklblLimpiarBusquedaAvanzada.TabIndex = 13;
+            this.linklblLimpiarBusquedaAvanzada.TabStop = true;
+            this.linklblLimpiarBusquedaAvanzada.Text = "Limpiar filtro";
+            this.linklblLimpiarBusquedaAvanzada.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLimpiarBusquedaAvanzada_LinkClicked);
             // 
             // lblFiltro
             // 
@@ -205,7 +213,7 @@
             this.gbArticulo.Controls.Add(this.btnEliminar);
             this.gbArticulo.Controls.Add(this.btnAgregar);
             this.gbArticulo.Controls.Add(this.btnModificar);
-            this.gbArticulo.Location = new System.Drawing.Point(21, 276);
+            this.gbArticulo.Location = new System.Drawing.Point(21, 252);
             this.gbArticulo.Name = "gbArticulo";
             this.gbArticulo.Size = new System.Drawing.Size(606, 52);
             this.gbArticulo.TabIndex = 11;
@@ -216,7 +224,7 @@
             // 
             this.gbMarca.Controls.Add(this.btnEliminarMarca);
             this.gbMarca.Controls.Add(this.btnAgregarMarca);
-            this.gbMarca.Location = new System.Drawing.Point(21, 334);
+            this.gbMarca.Location = new System.Drawing.Point(21, 310);
             this.gbMarca.Name = "gbMarca";
             this.gbMarca.Size = new System.Drawing.Size(302, 52);
             this.gbMarca.TabIndex = 12;
@@ -247,7 +255,7 @@
             // 
             this.gbCategoria.Controls.Add(this.btnEliminarCategoria);
             this.gbCategoria.Controls.Add(this.btnAgregarCategoria);
-            this.gbCategoria.Location = new System.Drawing.Point(325, 334);
+            this.gbCategoria.Location = new System.Drawing.Point(325, 310);
             this.gbCategoria.Name = "gbCategoria";
             this.gbCategoria.Size = new System.Drawing.Size(302, 52);
             this.gbCategoria.TabIndex = 13;
@@ -274,11 +282,85 @@
             this.btnAgregarCategoria.UseVisualStyleBackColor = true;
             this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
             // 
+            // gbBusquedaGrupo
+            // 
+            this.gbBusquedaGrupo.Controls.Add(this.linkLimpiarBusquedaGrupo);
+            this.gbBusquedaGrupo.Controls.Add(this.btnBusquedaGrupo);
+            this.gbBusquedaGrupo.Controls.Add(this.cbValor);
+            this.gbBusquedaGrupo.Controls.Add(this.cbGrupo);
+            this.gbBusquedaGrupo.Controls.Add(this.lblValor);
+            this.gbBusquedaGrupo.Controls.Add(this.lblGrupo);
+            this.gbBusquedaGrupo.Location = new System.Drawing.Point(21, 449);
+            this.gbBusquedaGrupo.Name = "gbBusquedaGrupo";
+            this.gbBusquedaGrupo.Size = new System.Drawing.Size(606, 74);
+            this.gbBusquedaGrupo.TabIndex = 14;
+            this.gbBusquedaGrupo.TabStop = false;
+            this.gbBusquedaGrupo.Text = "Búsqueda por grupo";
+            // 
+            // btnBusquedaGrupo
+            // 
+            this.btnBusquedaGrupo.Location = new System.Drawing.Point(325, 37);
+            this.btnBusquedaGrupo.Name = "btnBusquedaGrupo";
+            this.btnBusquedaGrupo.Size = new System.Drawing.Size(111, 23);
+            this.btnBusquedaGrupo.TabIndex = 4;
+            this.btnBusquedaGrupo.Text = "Buscar";
+            this.btnBusquedaGrupo.UseVisualStyleBackColor = true;
+            this.btnBusquedaGrupo.Click += new System.EventHandler(this.btnBusquedaGrupo_Click);
+            // 
+            // cbValor
+            // 
+            this.cbValor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbValor.FormattingEnabled = true;
+            this.cbValor.Location = new System.Drawing.Point(172, 37);
+            this.cbValor.Name = "cbValor";
+            this.cbValor.Size = new System.Drawing.Size(111, 21);
+            this.cbValor.TabIndex = 3;
+            // 
+            // cbGrupo
+            // 
+            this.cbGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGrupo.FormattingEnabled = true;
+            this.cbGrupo.Location = new System.Drawing.Point(19, 37);
+            this.cbGrupo.Name = "cbGrupo";
+            this.cbGrupo.Size = new System.Drawing.Size(111, 21);
+            this.cbGrupo.TabIndex = 2;
+            this.cbGrupo.SelectedIndexChanged += new System.EventHandler(this.cbGrupo_SelectedIndexChanged);
+            // 
+            // lblValor
+            // 
+            this.lblValor.AutoSize = true;
+            this.lblValor.Location = new System.Drawing.Point(169, 20);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(31, 13);
+            this.lblValor.TabIndex = 1;
+            this.lblValor.Text = "Valor";
+            // 
+            // lblGrupo
+            // 
+            this.lblGrupo.AutoSize = true;
+            this.lblGrupo.Location = new System.Drawing.Point(19, 20);
+            this.lblGrupo.Name = "lblGrupo";
+            this.lblGrupo.Size = new System.Drawing.Size(36, 13);
+            this.lblGrupo.TabIndex = 0;
+            this.lblGrupo.Text = "Grupo";
+            // 
+            // linkLimpiarBusquedaGrupo
+            // 
+            this.linkLimpiarBusquedaGrupo.AutoSize = true;
+            this.linkLimpiarBusquedaGrupo.Location = new System.Drawing.Point(517, 0);
+            this.linkLimpiarBusquedaGrupo.Name = "linkLimpiarBusquedaGrupo";
+            this.linkLimpiarBusquedaGrupo.Size = new System.Drawing.Size(62, 13);
+            this.linkLimpiarBusquedaGrupo.TabIndex = 5;
+            this.linkLimpiarBusquedaGrupo.TabStop = true;
+            this.linkLimpiarBusquedaGrupo.Text = "Limpiar filtro";
+            this.linkLimpiarBusquedaGrupo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLimpiarBusquedaGrupo_LinkClicked);
+            // 
             // frmListaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 502);
+            this.ClientSize = new System.Drawing.Size(952, 527);
+            this.Controls.Add(this.gbBusquedaGrupo);
             this.Controls.Add(this.gbCategoria);
             this.Controls.Add(this.gbMarca);
             this.Controls.Add(this.gbArticulo);
@@ -296,6 +378,8 @@
             this.gbArticulo.ResumeLayout(false);
             this.gbMarca.ResumeLayout(false);
             this.gbCategoria.ResumeLayout(false);
+            this.gbBusquedaGrupo.ResumeLayout(false);
+            this.gbBusquedaGrupo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -315,7 +399,7 @@
         private System.Windows.Forms.Label lblCriterio;
         private System.Windows.Forms.Label lblCampo;
         internal System.Windows.Forms.PictureBox pbArticulo;
-        private System.Windows.Forms.LinkLabel linklblLimpiarFiltro;
+        private System.Windows.Forms.LinkLabel linklblLimpiarBusquedaAvanzada;
         private System.Windows.Forms.GroupBox gbArticulo;
         private System.Windows.Forms.GroupBox gbMarca;
         private System.Windows.Forms.Button btnAgregarMarca;
@@ -323,6 +407,13 @@
         private System.Windows.Forms.Button btnAgregarCategoria;
         private System.Windows.Forms.Button btnEliminarMarca;
         private System.Windows.Forms.Button btnEliminarCategoria;
+        private System.Windows.Forms.GroupBox gbBusquedaGrupo;
+        private System.Windows.Forms.ComboBox cbValor;
+        private System.Windows.Forms.ComboBox cbGrupo;
+        private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.Label lblGrupo;
+        private System.Windows.Forms.Button btnBusquedaGrupo;
+        private System.Windows.Forms.LinkLabel linkLimpiarBusquedaGrupo;
     }
 }
 
