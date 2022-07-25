@@ -23,7 +23,7 @@ namespace Articulos.Winforms
 
         private void frmListaArticulos_Load(object sender, EventArgs e)
         {
-            Cargar();
+            CargarGrilla();
             cbCampo.Items.Add("Código");
             cbCampo.Items.Add("Nombre");
             cbCampo.Items.Add("Descripción");
@@ -33,7 +33,7 @@ namespace Articulos.Winforms
 
         }
 
-        private void Cargar()
+        private void CargarGrilla()
         {
             ArticuloServicios servicio = new ArticuloServicios();
 
@@ -82,6 +82,7 @@ namespace Articulos.Winforms
         {
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
+            CargarGrilla();
 
         }
 
@@ -171,7 +172,7 @@ namespace Articulos.Winforms
 
             frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
             modificar.ShowDialog();
-            Cargar();
+            CargarGrilla();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -188,7 +189,7 @@ namespace Articulos.Winforms
             {
                 seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 servicio.Eliminar(seleccionado.Id);
-                Cargar();
+                CargarGrilla();
             }
         }
     }

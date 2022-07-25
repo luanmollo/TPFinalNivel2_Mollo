@@ -203,6 +203,7 @@
             this.btnSubirImagen.TabIndex = 6;
             this.btnSubirImagen.Text = "Subir";
             this.btnSubirImagen.UseVisualStyleBackColor = true;
+            this.btnSubirImagen.Click += new System.EventHandler(this.btnSubirImagen_Click);
             // 
             // frmAltaArticulo
             // 

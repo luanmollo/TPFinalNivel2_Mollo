@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Articulos.Modelo;
 using Articulos.Servicios;
+using System.Configuration;
 
 namespace Articulos.Winforms
 {
     public partial class frmAltaArticulo : Form
     {
         private Articulo articulo = null;
+        private OpenFileDialog archivo = null;
 
 
         public frmAltaArticulo()
@@ -111,6 +114,9 @@ namespace Articulos.Winforms
                     MessageBox.Show("Agregado exitosamente");
                 }
 
+                if (archivo != null && !(txtImagen.Text.ToUpper().Contains("HTTP")))
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["imagenes"] + archivo.SafeFileName);
+
                 Close();
             }
             catch (Exception ex)
@@ -141,6 +147,17 @@ namespace Articulos.Winforms
         private void txtImagen_Leave(object sender, EventArgs e)
         {
             CargarImagen(txtImagen.Text);
+        }
+
+        private void btnSubirImagen_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg;|png|*.png";
+            if(archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtImagen.Text = archivo.FileName;
+                CargarImagen(archivo.FileName);
+            }
         }
     }
 }
