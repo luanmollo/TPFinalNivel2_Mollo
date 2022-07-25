@@ -42,5 +42,26 @@ namespace Articulos.Servicios
                 datos.CerrarConexion();
             }
         }
+
+        public void Agregar(Categoria nueva)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.ConfigurarConsulta("insert into categorias(Descripcion) values(@Descripcion)");
+                datos.ConfigurarParametros("@Descripcion", nueva.Descripcion);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }

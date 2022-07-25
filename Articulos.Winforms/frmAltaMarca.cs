@@ -14,9 +14,22 @@ namespace Articulos.Winforms
 {
     public partial class frmAltaMarca : Form
     {
-        public frmAltaMarca()
+        private string btnNombre;
+        public frmAltaMarca(string btnNombre)
         {
+            this.btnNombre = btnNombre;
             InitializeComponent();
+
+            switch (btnNombre)
+            {
+                case "btnAgregarMarca":
+                    Text = "Nueva Marca";
+                    break;
+
+                case "btnAgregarCategoria":
+                    Text = "Nueva Categoría";
+                    break;
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -26,16 +39,27 @@ namespace Articulos.Winforms
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            MarcaServicios servicio = new MarcaServicios();
-
             try
             {
                 if(!(string.IsNullOrEmpty(txtDescripcion.Text)))
                 {
-                    Marca marca = new Marca();
+                    switch (btnNombre)
+                    {
+                        case "btnAgregarMarca":
+                            MarcaServicios marcaServicio = new MarcaServicios();
+                            Marca marca = new Marca();
+                            marca.Descripcion = txtDescripcion.Text;
+                            marcaServicio.Agregar(marca);
+                            break;
 
-                    marca.Descripcion = txtDescripcion.Text;
-                    servicio.Agregar(marca);
+                        case "btnAgregarCategoria":
+                            CategoriaServicios categoriaServicio = new CategoriaServicios();
+                            Categoria categoria = new Categoria();
+                            categoria.Descripcion = txtDescripcion.Text;
+                            categoriaServicio.Agregar(categoria);
+                            break;
+                    }
+
                     MessageBox.Show("Agregada exitosamente");
 
                     Close();

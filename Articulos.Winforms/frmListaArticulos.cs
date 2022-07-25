@@ -211,7 +211,15 @@ namespace Articulos.Winforms
 
         private void btnAgregarMarca_Click(object sender, EventArgs e)
         {
-            frmAltaMarca alta = new frmAltaMarca();
+            Button btn = (Button)sender;
+            frmAltaMarca alta = new frmAltaMarca(btn.Name);
+            alta.ShowDialog();
+        }
+
+        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            frmAltaMarca alta = new frmAltaMarca(btn.Name);
             alta.ShowDialog();
         }
     }

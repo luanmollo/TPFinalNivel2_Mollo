@@ -247,6 +247,7 @@
             this.btnAgregarCategoria.TabIndex = 1;
             this.btnAgregarCategoria.Text = "Agregar";
             this.btnAgregarCategoria.UseVisualStyleBackColor = true;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
             // 
             // frmListaArticulos
             // 
