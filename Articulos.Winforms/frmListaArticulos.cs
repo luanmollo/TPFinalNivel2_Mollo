@@ -209,6 +209,10 @@ namespace Articulos.Winforms
             CargarGrilla();
         }
 
-       
+        private void btnAgregarMarca_Click(object sender, EventArgs e)
+        {
+            frmAltaMarca alta = new frmAltaMarca();
+            alta.ShowDialog();
+        }
     }
 }

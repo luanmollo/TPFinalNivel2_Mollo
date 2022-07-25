@@ -44,5 +44,26 @@ namespace Articulos.Servicios
                 datos.CerrarConexion();
             }
         }
+
+        public void Agregar(Marca nueva)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.ConfigurarConsulta("insert into marcas(Descripcion) values(@Descripcion)");
+                datos.ConfigurarParametros("@Descripcion", nueva.Descripcion);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }

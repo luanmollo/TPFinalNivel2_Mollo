@@ -38,19 +38,27 @@
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBusquedaAvanzada = new System.Windows.Forms.Button();
             this.gbBusquedaAvanzada = new System.Windows.Forms.GroupBox();
+            this.linklblLimpiarFiltro = new System.Windows.Forms.LinkLabel();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.lblCriterio = new System.Windows.Forms.Label();
             this.lblCampo = new System.Windows.Forms.Label();
-            this.linklblLimpiarFiltro = new System.Windows.Forms.LinkLabel();
+            this.gbArticulo = new System.Windows.Forms.GroupBox();
+            this.gbMarca = new System.Windows.Forms.GroupBox();
+            this.btnAgregarMarca = new System.Windows.Forms.Button();
+            this.gbCategoria = new System.Windows.Forms.GroupBox();
+            this.btnAgregarCategoria = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
             this.gbBusquedaAvanzada.SuspendLayout();
+            this.gbArticulo.SuspendLayout();
+            this.gbMarca.SuspendLayout();
+            this.gbCategoria.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(21, 41);
+            this.dgvArticulos.Location = new System.Drawing.Point(21, 24);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -60,7 +68,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(40, 299);
+            this.btnAgregar.Location = new System.Drawing.Point(19, 16);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(111, 23);
             this.btnAgregar.TabIndex = 1;
@@ -70,7 +78,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(193, 299);
+            this.btnModificar.Location = new System.Drawing.Point(172, 16);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(111, 23);
             this.btnModificar.TabIndex = 2;
@@ -80,7 +88,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(346, 299);
+            this.btnEliminar.Location = new System.Drawing.Point(325, 16);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(111, 23);
             this.btnEliminar.TabIndex = 3;
@@ -90,7 +98,7 @@
             // 
             // pbArticulo
             // 
-            this.pbArticulo.Location = new System.Drawing.Point(678, 41);
+            this.pbArticulo.Location = new System.Drawing.Point(678, 24);
             this.pbArticulo.Name = "pbArticulo";
             this.pbArticulo.Size = new System.Drawing.Size(221, 221);
             this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -144,12 +152,23 @@
             this.gbBusquedaAvanzada.Controls.Add(this.btnBusquedaAvanzada);
             this.gbBusquedaAvanzada.Controls.Add(this.cbCampo);
             this.gbBusquedaAvanzada.Controls.Add(this.cbCriterio);
-            this.gbBusquedaAvanzada.Location = new System.Drawing.Point(21, 353);
+            this.gbBusquedaAvanzada.Location = new System.Drawing.Point(21, 392);
             this.gbBusquedaAvanzada.Name = "gbBusquedaAvanzada";
             this.gbBusquedaAvanzada.Size = new System.Drawing.Size(606, 74);
             this.gbBusquedaAvanzada.TabIndex = 10;
             this.gbBusquedaAvanzada.TabStop = false;
             this.gbBusquedaAvanzada.Text = "Búsqueda avanzada";
+            // 
+            // linklblLimpiarFiltro
+            // 
+            this.linklblLimpiarFiltro.AutoSize = true;
+            this.linklblLimpiarFiltro.Location = new System.Drawing.Point(517, 0);
+            this.linklblLimpiarFiltro.Name = "linklblLimpiarFiltro";
+            this.linklblLimpiarFiltro.Size = new System.Drawing.Size(62, 13);
+            this.linklblLimpiarFiltro.TabIndex = 13;
+            this.linklblLimpiarFiltro.TabStop = true;
+            this.linklblLimpiarFiltro.Text = "Limpiar filtro";
+            this.linklblLimpiarFiltro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLimpiarFiltro_LinkClicked);
             // 
             // lblFiltro
             // 
@@ -178,27 +197,67 @@
             this.lblCampo.TabIndex = 10;
             this.lblCampo.Text = "Campo:";
             // 
-            // linklblLimpiarFiltro
+            // gbArticulo
             // 
-            this.linklblLimpiarFiltro.AutoSize = true;
-            this.linklblLimpiarFiltro.Location = new System.Drawing.Point(517, 0);
-            this.linklblLimpiarFiltro.Name = "linklblLimpiarFiltro";
-            this.linklblLimpiarFiltro.Size = new System.Drawing.Size(62, 13);
-            this.linklblLimpiarFiltro.TabIndex = 13;
-            this.linklblLimpiarFiltro.TabStop = true;
-            this.linklblLimpiarFiltro.Text = "Limpiar filtro";
-            this.linklblLimpiarFiltro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLimpiarFiltro_LinkClicked);
+            this.gbArticulo.Controls.Add(this.btnEliminar);
+            this.gbArticulo.Controls.Add(this.btnAgregar);
+            this.gbArticulo.Controls.Add(this.btnModificar);
+            this.gbArticulo.Location = new System.Drawing.Point(21, 276);
+            this.gbArticulo.Name = "gbArticulo";
+            this.gbArticulo.Size = new System.Drawing.Size(606, 52);
+            this.gbArticulo.TabIndex = 11;
+            this.gbArticulo.TabStop = false;
+            this.gbArticulo.Text = "Articulo";
+            // 
+            // gbMarca
+            // 
+            this.gbMarca.Controls.Add(this.btnAgregarMarca);
+            this.gbMarca.Location = new System.Drawing.Point(21, 334);
+            this.gbMarca.Name = "gbMarca";
+            this.gbMarca.Size = new System.Drawing.Size(302, 52);
+            this.gbMarca.TabIndex = 12;
+            this.gbMarca.TabStop = false;
+            this.gbMarca.Text = "Marca";
+            // 
+            // btnAgregarMarca
+            // 
+            this.btnAgregarMarca.Location = new System.Drawing.Point(22, 20);
+            this.btnAgregarMarca.Name = "btnAgregarMarca";
+            this.btnAgregarMarca.Size = new System.Drawing.Size(111, 23);
+            this.btnAgregarMarca.TabIndex = 0;
+            this.btnAgregarMarca.Text = "Agregar";
+            this.btnAgregarMarca.UseVisualStyleBackColor = true;
+            this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
+            // 
+            // gbCategoria
+            // 
+            this.gbCategoria.Controls.Add(this.btnAgregarCategoria);
+            this.gbCategoria.Location = new System.Drawing.Point(325, 334);
+            this.gbCategoria.Name = "gbCategoria";
+            this.gbCategoria.Size = new System.Drawing.Size(302, 52);
+            this.gbCategoria.TabIndex = 13;
+            this.gbCategoria.TabStop = false;
+            this.gbCategoria.Text = "Categoría";
+            // 
+            // btnAgregarCategoria
+            // 
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(21, 19);
+            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(111, 23);
+            this.btnAgregarCategoria.TabIndex = 1;
+            this.btnAgregarCategoria.Text = "Agregar";
+            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
             // 
             // frmListaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 465);
+            this.ClientSize = new System.Drawing.Size(952, 502);
+            this.Controls.Add(this.gbCategoria);
+            this.Controls.Add(this.gbMarca);
+            this.Controls.Add(this.gbArticulo);
             this.Controls.Add(this.gbBusquedaAvanzada);
             this.Controls.Add(this.pbArticulo);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulos);
             this.Name = "frmListaArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -208,6 +267,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).EndInit();
             this.gbBusquedaAvanzada.ResumeLayout(false);
             this.gbBusquedaAvanzada.PerformLayout();
+            this.gbArticulo.ResumeLayout(false);
+            this.gbMarca.ResumeLayout(false);
+            this.gbCategoria.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -228,6 +290,11 @@
         private System.Windows.Forms.Label lblCampo;
         internal System.Windows.Forms.PictureBox pbArticulo;
         private System.Windows.Forms.LinkLabel linklblLimpiarFiltro;
+        private System.Windows.Forms.GroupBox gbArticulo;
+        private System.Windows.Forms.GroupBox gbMarca;
+        private System.Windows.Forms.Button btnAgregarMarca;
+        private System.Windows.Forms.GroupBox gbCategoria;
+        private System.Windows.Forms.Button btnAgregarCategoria;
     }
 }
 
