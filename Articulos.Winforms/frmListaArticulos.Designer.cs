@@ -41,6 +41,7 @@
             this.lblFiltro = new System.Windows.Forms.Label();
             this.lblCriterio = new System.Windows.Forms.Label();
             this.lblCampo = new System.Windows.Forms.Label();
+            this.linklblLimpiarFiltro = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
             this.gbBusquedaAvanzada.SuspendLayout();
@@ -135,6 +136,7 @@
             // 
             // gbBusquedaAvanzada
             // 
+            this.gbBusquedaAvanzada.Controls.Add(this.linklblLimpiarFiltro);
             this.gbBusquedaAvanzada.Controls.Add(this.lblFiltro);
             this.gbBusquedaAvanzada.Controls.Add(this.lblCriterio);
             this.gbBusquedaAvanzada.Controls.Add(this.lblCampo);
@@ -176,6 +178,17 @@
             this.lblCampo.TabIndex = 10;
             this.lblCampo.Text = "Campo:";
             // 
+            // linklblLimpiarFiltro
+            // 
+            this.linklblLimpiarFiltro.AutoSize = true;
+            this.linklblLimpiarFiltro.Location = new System.Drawing.Point(517, 0);
+            this.linklblLimpiarFiltro.Name = "linklblLimpiarFiltro";
+            this.linklblLimpiarFiltro.Size = new System.Drawing.Size(62, 13);
+            this.linklblLimpiarFiltro.TabIndex = 13;
+            this.linklblLimpiarFiltro.TabStop = true;
+            this.linklblLimpiarFiltro.Text = "Limpiar filtro";
+            this.linklblLimpiarFiltro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLimpiarFiltro_LinkClicked);
+            // 
             // frmListaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +227,7 @@
         private System.Windows.Forms.Label lblCriterio;
         private System.Windows.Forms.Label lblCampo;
         internal System.Windows.Forms.PictureBox pbArticulo;
+        private System.Windows.Forms.LinkLabel linklblLimpiarFiltro;
     }
 }
 

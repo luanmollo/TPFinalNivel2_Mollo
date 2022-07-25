@@ -88,21 +88,29 @@ namespace Articulos.Winforms
 
         private void cbCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string opcion = cbCampo.SelectedItem.ToString();
-
-            if(opcion == "Precio")
+            if (cbCampo.SelectedIndex == -1)
             {
                 cbCriterio.Items.Clear();
-                cbCriterio.Items.Add("Mayor a");
-                cbCriterio.Items.Add("Menor a");
-                cbCriterio.Items.Add("Igual a");
             }
             else
             {
-                cbCriterio.Items.Clear();
-                cbCriterio.Items.Add("Empieza con");
-                cbCriterio.Items.Add("Termina con");
-                cbCriterio.Items.Add("Contiene");
+                string opcion = cbCampo.SelectedItem.ToString();
+
+                if(opcion == "Precio")
+                {
+                    cbCriterio.Items.Clear();
+                    cbCriterio.Items.Add("Mayor a");
+                    cbCriterio.Items.Add("Menor a");
+                    cbCriterio.Items.Add("Igual a");
+                }
+                else
+                {
+                    cbCriterio.Items.Clear();
+                    cbCriterio.Items.Add("Empieza con");
+                    cbCriterio.Items.Add("Termina con");
+                    cbCriterio.Items.Add("Contiene");
+                }
+
             }
         }
 
@@ -192,5 +200,15 @@ namespace Articulos.Winforms
                 CargarGrilla();
             }
         }
+
+        private void linklblLimpiarFiltro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            cbCampo.SelectedIndex = -1;
+            cbCriterio.SelectedIndex = -1;
+            txtFiltro.Text = "";
+            CargarGrilla();
+        }
+
+       
     }
 }
