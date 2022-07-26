@@ -39,7 +39,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(153, 124);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(63, 23);
-            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -49,7 +49,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(61, 124);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(63, 23);
-            this.btnEliminar.TabIndex = 14;
+            this.btnEliminar.TabIndex = 1;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -61,7 +61,7 @@
             this.cbEliminar.Location = new System.Drawing.Point(61, 67);
             this.cbEliminar.Name = "cbEliminar";
             this.cbEliminar.Size = new System.Drawing.Size(155, 21);
-            this.cbEliminar.TabIndex = 16;
+            this.cbEliminar.TabIndex = 0;
             // 
             // lblEliminar
             // 

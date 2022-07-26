@@ -68,7 +68,7 @@ namespace Articulos.Winforms
 
         private bool ValidarAltaArticulo()
         {
-            if (string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtDescripcion.Text) || string.IsNullOrEmpty(txtImagen.Text) || string.IsNullOrEmpty(txtPrecio.Text)){
+            if (string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtDescripcion.Text) || string.IsNullOrEmpty(txtPrecio.Text)){
                 MessageBox.Show("Debes completar todos los campos");
                 return true;
             }

@@ -39,7 +39,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(150, 125);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(63, 23);
-            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -49,7 +49,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(58, 125);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(63, 23);
-            this.btnAceptar.TabIndex = 10;
+            this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -59,7 +59,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(58, 67);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(155, 20);
-            this.txtDescripcion.TabIndex = 12;
+            this.txtDescripcion.TabIndex = 0;
             // 
             // lblDescripcion
             // 

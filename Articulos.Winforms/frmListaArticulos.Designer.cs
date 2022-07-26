@@ -38,10 +38,10 @@
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBusquedaAvanzada = new System.Windows.Forms.Button();
             this.gbBusquedaAvanzada = new System.Windows.Forms.GroupBox();
-            this.linklblLimpiarBusquedaAvanzada = new System.Windows.Forms.LinkLabel();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.lblCriterio = new System.Windows.Forms.Label();
             this.lblCampo = new System.Windows.Forms.Label();
+            this.linklblLimpiarFiltros = new System.Windows.Forms.LinkLabel();
             this.gbArticulo = new System.Windows.Forms.GroupBox();
             this.gbMarca = new System.Windows.Forms.GroupBox();
             this.btnEliminarMarca = new System.Windows.Forms.Button();
@@ -55,7 +55,6 @@
             this.cbGrupo = new System.Windows.Forms.ComboBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.lblGrupo = new System.Windows.Forms.Label();
-            this.linkLimpiarBusquedaGrupo = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
             this.gbBusquedaAvanzada.SuspendLayout();
@@ -82,7 +81,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(19, 16);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(111, 23);
-            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -92,7 +91,7 @@
             this.btnModificar.Location = new System.Drawing.Point(172, 16);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(111, 23);
-            this.btnModificar.TabIndex = 2;
+            this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -102,7 +101,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(325, 16);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(111, 23);
-            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -155,7 +154,6 @@
             // 
             // gbBusquedaAvanzada
             // 
-            this.gbBusquedaAvanzada.Controls.Add(this.linklblLimpiarBusquedaAvanzada);
             this.gbBusquedaAvanzada.Controls.Add(this.lblFiltro);
             this.gbBusquedaAvanzada.Controls.Add(this.lblCriterio);
             this.gbBusquedaAvanzada.Controls.Add(this.lblCampo);
@@ -169,17 +167,6 @@
             this.gbBusquedaAvanzada.TabIndex = 10;
             this.gbBusquedaAvanzada.TabStop = false;
             this.gbBusquedaAvanzada.Text = "Búsqueda avanzada";
-            // 
-            // linklblLimpiarBusquedaAvanzada
-            // 
-            this.linklblLimpiarBusquedaAvanzada.AutoSize = true;
-            this.linklblLimpiarBusquedaAvanzada.Location = new System.Drawing.Point(517, 0);
-            this.linklblLimpiarBusquedaAvanzada.Name = "linklblLimpiarBusquedaAvanzada";
-            this.linklblLimpiarBusquedaAvanzada.Size = new System.Drawing.Size(62, 13);
-            this.linklblLimpiarBusquedaAvanzada.TabIndex = 13;
-            this.linklblLimpiarBusquedaAvanzada.TabStop = true;
-            this.linklblLimpiarBusquedaAvanzada.Text = "Limpiar filtro";
-            this.linklblLimpiarBusquedaAvanzada.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLimpiarBusquedaAvanzada_LinkClicked);
             // 
             // lblFiltro
             // 
@@ -207,6 +194,17 @@
             this.lblCampo.Size = new System.Drawing.Size(43, 13);
             this.lblCampo.TabIndex = 10;
             this.lblCampo.Text = "Campo:";
+            // 
+            // linklblLimpiarFiltros
+            // 
+            this.linklblLimpiarFiltros.AutoSize = true;
+            this.linklblLimpiarFiltros.Location = new System.Drawing.Point(560, 236);
+            this.linklblLimpiarFiltros.Name = "linklblLimpiarFiltros";
+            this.linklblLimpiarFiltros.Size = new System.Drawing.Size(67, 13);
+            this.linklblLimpiarFiltros.TabIndex = 13;
+            this.linklblLimpiarFiltros.TabStop = true;
+            this.linklblLimpiarFiltros.Text = "Limpiar filtros";
+            this.linklblLimpiarFiltros.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLimpiarFiltros_LinkClicked);
             // 
             // gbArticulo
             // 
@@ -267,7 +265,7 @@
             this.btnEliminarCategoria.Location = new System.Drawing.Point(174, 19);
             this.btnEliminarCategoria.Name = "btnEliminarCategoria";
             this.btnEliminarCategoria.Size = new System.Drawing.Size(111, 23);
-            this.btnEliminarCategoria.TabIndex = 2;
+            this.btnEliminarCategoria.TabIndex = 1;
             this.btnEliminarCategoria.Text = "Eliminar";
             this.btnEliminarCategoria.UseVisualStyleBackColor = true;
             this.btnEliminarCategoria.Click += new System.EventHandler(this.btnEliminarCategoria_Click);
@@ -277,14 +275,13 @@
             this.btnAgregarCategoria.Location = new System.Drawing.Point(21, 19);
             this.btnAgregarCategoria.Name = "btnAgregarCategoria";
             this.btnAgregarCategoria.Size = new System.Drawing.Size(111, 23);
-            this.btnAgregarCategoria.TabIndex = 1;
+            this.btnAgregarCategoria.TabIndex = 0;
             this.btnAgregarCategoria.Text = "Agregar";
             this.btnAgregarCategoria.UseVisualStyleBackColor = true;
             this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
             // 
             // gbBusquedaGrupo
             // 
-            this.gbBusquedaGrupo.Controls.Add(this.linkLimpiarBusquedaGrupo);
             this.gbBusquedaGrupo.Controls.Add(this.btnBusquedaGrupo);
             this.gbBusquedaGrupo.Controls.Add(this.cbValor);
             this.gbBusquedaGrupo.Controls.Add(this.cbGrupo);
@@ -302,7 +299,7 @@
             this.btnBusquedaGrupo.Location = new System.Drawing.Point(325, 37);
             this.btnBusquedaGrupo.Name = "btnBusquedaGrupo";
             this.btnBusquedaGrupo.Size = new System.Drawing.Size(111, 23);
-            this.btnBusquedaGrupo.TabIndex = 4;
+            this.btnBusquedaGrupo.TabIndex = 2;
             this.btnBusquedaGrupo.Text = "Buscar";
             this.btnBusquedaGrupo.UseVisualStyleBackColor = true;
             this.btnBusquedaGrupo.Click += new System.EventHandler(this.btnBusquedaGrupo_Click);
@@ -314,7 +311,7 @@
             this.cbValor.Location = new System.Drawing.Point(172, 37);
             this.cbValor.Name = "cbValor";
             this.cbValor.Size = new System.Drawing.Size(111, 21);
-            this.cbValor.TabIndex = 3;
+            this.cbValor.TabIndex = 1;
             // 
             // cbGrupo
             // 
@@ -323,7 +320,7 @@
             this.cbGrupo.Location = new System.Drawing.Point(19, 37);
             this.cbGrupo.Name = "cbGrupo";
             this.cbGrupo.Size = new System.Drawing.Size(111, 21);
-            this.cbGrupo.TabIndex = 2;
+            this.cbGrupo.TabIndex = 0;
             this.cbGrupo.SelectedIndexChanged += new System.EventHandler(this.cbGrupo_SelectedIndexChanged);
             // 
             // lblValor
@@ -344,22 +341,12 @@
             this.lblGrupo.TabIndex = 0;
             this.lblGrupo.Text = "Grupo";
             // 
-            // linkLimpiarBusquedaGrupo
-            // 
-            this.linkLimpiarBusquedaGrupo.AutoSize = true;
-            this.linkLimpiarBusquedaGrupo.Location = new System.Drawing.Point(517, 0);
-            this.linkLimpiarBusquedaGrupo.Name = "linkLimpiarBusquedaGrupo";
-            this.linkLimpiarBusquedaGrupo.Size = new System.Drawing.Size(62, 13);
-            this.linkLimpiarBusquedaGrupo.TabIndex = 5;
-            this.linkLimpiarBusquedaGrupo.TabStop = true;
-            this.linkLimpiarBusquedaGrupo.Text = "Limpiar filtro";
-            this.linkLimpiarBusquedaGrupo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLimpiarBusquedaGrupo_LinkClicked);
-            // 
             // frmListaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 527);
+            this.ClientSize = new System.Drawing.Size(952, 533);
+            this.Controls.Add(this.linklblLimpiarFiltros);
             this.Controls.Add(this.gbBusquedaGrupo);
             this.Controls.Add(this.gbCategoria);
             this.Controls.Add(this.gbMarca);
@@ -381,6 +368,7 @@
             this.gbBusquedaGrupo.ResumeLayout(false);
             this.gbBusquedaGrupo.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -399,7 +387,7 @@
         private System.Windows.Forms.Label lblCriterio;
         private System.Windows.Forms.Label lblCampo;
         internal System.Windows.Forms.PictureBox pbArticulo;
-        private System.Windows.Forms.LinkLabel linklblLimpiarBusquedaAvanzada;
+        private System.Windows.Forms.LinkLabel linklblLimpiarFiltros;
         private System.Windows.Forms.GroupBox gbArticulo;
         private System.Windows.Forms.GroupBox gbMarca;
         private System.Windows.Forms.Button btnAgregarMarca;
@@ -413,7 +401,6 @@
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label lblGrupo;
         private System.Windows.Forms.Button btnBusquedaGrupo;
-        private System.Windows.Forms.LinkLabel linkLimpiarBusquedaGrupo;
     }
 }
 

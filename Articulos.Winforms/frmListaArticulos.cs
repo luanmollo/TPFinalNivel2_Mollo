@@ -204,11 +204,13 @@ namespace Articulos.Winforms
             }
         }
 
-        private void linklblLimpiarBusquedaAvanzada_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linklblLimpiarFiltros_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             cbCampo.SelectedIndex = -1;
             cbCriterio.SelectedIndex = -1;
             txtFiltro.Text = "";
+            cbGrupo.SelectedIndex = -1;
+            cbValor.SelectedIndex = -1;
             CargarGrilla();
         }
 
@@ -325,12 +327,6 @@ namespace Articulos.Winforms
             }
         }
 
-        private void linkLimpiarBusquedaGrupo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            cbGrupo.SelectedIndex = -1;
-            cbValor.SelectedIndex = -1;
-            CargarGrilla();
-
-        }
+       
     }
 }
